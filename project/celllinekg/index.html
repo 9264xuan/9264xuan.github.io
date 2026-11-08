@@ -31,7 +31,7 @@
     <section>
       <h2>Abstract</h2>
       <p>
-        Cancer cell line selection requires integrating molecular, functional, and pharmacological evidence across databases with inconsistent identifiers and data representations. CellLineKG is a cell line-centric knowledge graph that harmonizes records from Cellosaurus, the Cancer Dependency Map (DepMap), the Genomics of Drug Sensitivity in Cancer (GDSC), and Cell Model Passports (CMP) for 1,780 human cancer cell lines spanning 29 lineages and 191 cancer subtypes. The graph comprises 14 node types, 20 relationship types, approximately 2.95 million nodes, and 5.84 million edges. Continuous measurements are converted into discrete evidence states for copy-number alterations, gene expression, protein abundance, CRISPR dependencies, and drug response. CellLineKG also provides natural-language access through Text2Cypher and evidence-path retrieval, together with benchmark datasets for validation and integrated evidence retrieval.
+        Cancer cell line selection requires integrating molecular, functional and pharmacological evidence across databases with inconsistent identifiers and data representations. We present CellLineKG, a cell line-centric knowledge graph that harmonizes records from Cellosaurus, the Cancer Dependency Map (DepMap), the Genomics of Drug Sensitivity in Cancer (GDSC) and Cell Model Passports (CMP) for 1,780 human cancer cell lines spanning 29 lineages and 191 cancer subtypes. The graph comprises 14 node types, 20 relationship types, 2.95 million nodes and 5.84 million edges. Continuous measurements are converted into discrete evidence states using predefined thresholds for copy number alterations, gene expression, protein abundance, CRISPR dependencies and drug response. A natural-language question-answering framework combines Text2Cypher for structured queries with evidence-path retrieval for cross-category evidence integration, returning answers with supporting subgraphs.      
       </p>
     </section>
 
@@ -41,7 +41,7 @@
         <img src="assets/fig1.png" alt="Overview of CellLineKG" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
         <div class="image-placeholder" style="display:none;">Place the manuscript overview figure at <code>assets/fig1.png</code>.</div>
         <figcaption>
-          CellLineKG integrates Cellosaurus, DepMap, GDSC, and CMP, reconciles cell-line identifiers, constructs a unified graph, and supports natural-language querying and evidence visualization.
+          Cancer cell line data from Cellosaurus, DepMap, GDSC, and CMP are processed, reconciled, and organized into a cell line-centered knowledge graph. CellLineKG supports two natural-language query workflows, is evaluated through Q&A benchmarking and biological consistency assessment, and enables multiple applications with concise answers and subgraph visualization.        
         </figcaption>
       </figure>
 
@@ -76,7 +76,7 @@
     <section>
       <h2>Validation</h2>
       <p>
-        Source-traceable data categories were assessed using a single-question benchmark covering cell-line metadata, variants, copy-number variation, gene dependency, and drug response. Derived gene-expression and protein-abundance states were assessed through KEGG pathway enrichment and comparison with published studies.
+        Source-traceable data categories were assessed using a single Q&amp;A benchmark covering cell line metadata, variant, copy number variation, gene dependency, and drug response. Derived gene-expression and protein-abundance states were assessed through KEGG pathway enrichment and comparison with published studies.
       </p>
       <figure>
         <img src="assets/fig2.png" alt="Validation of CellLineKG" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
@@ -88,13 +88,13 @@
       <h2>Applications</h2>
       <div class="cards">
         <article class="card">
-          <h3>Multi-condition cell-line selection</h3>
-          <p>CellLineKG can retrieve cancer cell lines satisfying combinations of disease, molecular, functional, and pharmacological criteria.</p>
+          <h3>Multi-condition cancer cell line selection</h3>
+          <p>CellLineKG supports multi-condition cell line selection based on molecular and pharmacological criteria.</p>
           <img class="card-image" src="assets/fig3.png" alt="Multi-condition cancer cell line selection" onerror="this.style.display='none';" />
         </article>
         <article class="card">
           <h3>Integrated evidence retrieval</h3>
-          <p>CellLineKG can connect molecular, functional, and pharmacological evidence for a target gene within a specified cancer cell line.</p>
+          <p>CellLineKG supports integrated retrieval of molecular, functional, and pharmacological evidence for cell line–target pairs.</p>
           <img class="card-image" src="assets/fig4.png" alt="Integrated evidence retrieval" onerror="this.style.display='none';" />
         </article>
       </div>
