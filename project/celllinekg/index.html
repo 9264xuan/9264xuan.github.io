@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="CellLineKG: an integrated multimodal knowledge graph dataset for human cancer cell lines." />
+  <title>CellLineKG</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="page">
+    <header class="hero">
+      <h1>CellLineKG: An Integrated Multimodal Knowledge Graph Dataset for Human Cancer Cell Lines</h1>
+      <p class="authors">
+        <strong>Xuan Wang</strong><sup>1</sup>, Ziwei Yang<sup>2</sup>, Xihao Piao<sup>3</sup>, Zheng Chen<sup>3</sup>, and Lingwei Zhu<sup>1,*</sup>
+      </p>
+      <p class="affiliations">
+        <sup>1</sup>School of Computing and Information Technology, Great Bay University, China<br />
+        <sup>2</sup>Bioinformatics Center, Institute for Chemical Research, Kyoto University, Japan<br />
+        <sup>3</sup>SANKEN, Osaka University, Japan<br />
+        <sup>*</sup>Corresponding author
+      </p>
+
+      <nav class="links" aria-label="Project links">
+        <span class="button disabled" title="Paper link will be added after the manuscript is publicly available">Paper</span>
+        <a class="button" href="https://github.com/9264xuan/CellLineKG-release" target="_blank" rel="noopener">Code</a>
+        <a class="button" href="https://huggingface.co/datasets/wave12/celllinekg" target="_blank" rel="noopener">🤗 Hugging Face</a>
+      </nav>
+    </header>
+
+    <section>
+      <h2>Abstract</h2>
+      <p>
+        Cancer cell line selection requires integrating molecular, functional, and pharmacological evidence across databases with inconsistent identifiers and data representations. CellLineKG is a cell line-centric knowledge graph that harmonizes records from Cellosaurus, the Cancer Dependency Map (DepMap), the Genomics of Drug Sensitivity in Cancer (GDSC), and Cell Model Passports (CMP) for 1,780 human cancer cell lines spanning 29 lineages and 191 cancer subtypes. The graph comprises 14 node types, 20 relationship types, approximately 2.95 million nodes, and 5.84 million edges. Continuous measurements are converted into discrete evidence states for copy-number alterations, gene expression, protein abundance, CRISPR dependencies, and drug response. CellLineKG also provides natural-language access through Text2Cypher and evidence-path retrieval, together with benchmark datasets for validation and integrated evidence retrieval.
+      </p>
+    </section>
+
+    <section>
+      <h2>Overview</h2>
+      <figure>
+        <img src="assets/fig1.png" alt="Overview of CellLineKG" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <div class="image-placeholder" style="display:none;">Place the manuscript overview figure at <code>assets/fig1.png</code>.</div>
+        <figcaption>
+          CellLineKG integrates Cellosaurus, DepMap, GDSC, and CMP, reconciles cell-line identifiers, constructs a unified graph, and supports natural-language querying and evidence visualization.
+        </figcaption>
+      </figure>
+
+      <div class="stats">
+        <div><strong>1,780</strong><span>cancer cell lines</span></div>
+        <div><strong>29</strong><span>lineages</span></div>
+        <div><strong>191</strong><span>subtypes</span></div>
+        <div><strong>14</strong><span>node types</span></div>
+        <div><strong>20</strong><span>relationship types</span></div>
+        <div><strong>2.95M</strong><span>nodes</span></div>
+        <div><strong>5.84M</strong><span>edges</span></div>
+      </div>
+    </section>
+
+    <section>
+      <h2>Data</h2>
+      <p>
+        The released resource contains processed graph tables and benchmark datasets. The graph data are provided as CSV node and relationship tables that can be imported into Neo4j to reconstruct CellLineKG. Benchmark files are provided in XLSX format for single Q&amp;A, multi-condition cancer cell line selection, and integrated evidence retrieval.
+      </p>
+      <div class="cards">
+        <article class="card">
+          <h3>Processed graph</h3>
+          <p>14 node tables and 20 relationship tables generated after preprocessing, cross-database reconciliation, feature processing, and schema mapping.</p>
+        </article>
+        <article class="card">
+          <h3>Benchmarks</h3>
+          <p><code>qa150.xlsx</code>, <code>qa_multi.xlsx</code>, and <code>qa_path.xlsx</code> provide questions and reference answers for the three evaluation tasks.</p>
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Validation</h2>
+      <p>
+        Source-traceable data categories were assessed using a single-question benchmark covering cell-line metadata, variants, copy-number variation, gene dependency, and drug response. Derived gene-expression and protein-abundance states were assessed through KEGG pathway enrichment and comparison with published studies.
+      </p>
+      <figure>
+        <img src="assets/fig2.png" alt="Validation of CellLineKG" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+        <div class="image-placeholder" style="display:none;">Optional: place the manuscript validation figure at <code>assets/fig2.png</code>.</div>
+      </figure>
+    </section>
+
+    <section>
+      <h2>Applications</h2>
+      <div class="cards">
+        <article class="card">
+          <h3>Multi-condition cell-line selection</h3>
+          <p>CellLineKG can retrieve cancer cell lines satisfying combinations of disease, molecular, functional, and pharmacological criteria.</p>
+          <img class="card-image" src="assets/fig3.png" alt="Multi-condition cancer cell line selection" onerror="this.style.display='none';" />
+        </article>
+        <article class="card">
+          <h3>Integrated evidence retrieval</h3>
+          <p>CellLineKG can connect molecular, functional, and pharmacological evidence for a target gene within a specified cancer cell line.</p>
+          <img class="card-image" src="assets/fig4.png" alt="Integrated evidence retrieval" onerror="this.style.display='none';" />
+        </article>
+      </div>
+    </section>
+
+    <section>
+      <h2>Usage</h2>
+      <p>
+        Users can reproduce CellLineKG from the source datasets using the released preprocessing workflow, or directly reconstruct the graph from the processed node and relationship tables. The repository also provides the natural-language query framework and evaluation scripts used in the study.
+      </p>
+      <pre><code>git clone https://github.com/9264xuan/CellLineKG-release.git
+cd CellLineKG-release</code></pre>
+    </section>
+
+    <section>
+      <h2>Citation</h2>
+      <p>The manuscript is currently being submitted. Replace this block with the final citation after a preprint or published article becomes available.</p>
+      <pre><code>@article{celllinekg,
+  title   = {An Integrated Multimodal Knowledge Graph Dataset for Human Cancer Cell Lines},
+  author  = {Wang, Xuan and Yang, Ziwei and Piao, Xihao and Chen, Zheng and Zhu, Lingwei},
+  note    = {Manuscript submitted}
+}</code></pre>
+    </section>
+
+    <footer>
+      <p>CellLineKG project page · Code and data are available through the links above.</p>
+    </footer>
+  </main>
+</body>
+</html>
